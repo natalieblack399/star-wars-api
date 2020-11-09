@@ -1,31 +1,69 @@
-import { films } from './data/films.js'
-import { people } from './data/people.js'
+import { people } from '../data/people.js'
 
-const main = document.querySelector('main')
+const mainContent = document.querySelector('#main')
 
+const mainHeader = document.createElement('header')
+mainHeader.className = 'mainHeader'
+document.body.insertBefore(mainHeader, mainContent)
 
+const maleButton = document.createElement('button')
+maleButton.textContent = 'Male Characters'
+mainHeader.appendChild(maleButton)
 
-for (let step = 0; step < 7; step++) {
-    let figure = document.createElement('figure')
-    let figImg = document.createElement('img')
-    figImg.src = `https://starwars-visualguide.com/assets/img/films/${step + 1}.jpg` 
-    let figCaption = document.createElement('figcaption')
-    figCaption.textContent = films[step].title
+const femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+mainHeader.appendChild(femaleButton)
 
-    figure.appendChild(figImg)
-    figure.appendChild(figCaption)
+const otherButton = document.createElement('button')
+otherButton.textContent = 'Other Characters'
+mainHeader.appendChild(otherButton)
 
-    main.appendChild(figure)
-  }
+const maleCharacters = people.filter((person) => person.gender === 'male')
 
-/* for (const film of films) {
-    let newImg = document.createElement('img') // new image instance
-    newImg.src = 'https://starwars-visualguide.com/assets/img/films/2.jpg' // set the source of it or nothing will show
-    // now append the image to the DOM somehow
-    main.appendChild(newImg)
-    console.log(film.title)
-  } */
-  
+const femaleCharacters = people.filter((person) => person.gender === 'female')
 
+const otherCharacters = people.filter((thing) => {
+    if (thing.gender === 'n/a') {
+        return thing
+    }
+})
 
-//https://starwars-visualguide.com/assets/img/characters/2.jpg
+maleButton.addEventListener('click', () => populateDOM(maleCharacters))
+
+femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
+
+function populateDOM(characters) {
+    removeChildren(mainContent)
+    characters.forEach((element) => {
+        const charFigure = document.createElement('figure')
+        const charImg = document.createElement('img')
+        let charNum = getLastNumber(element.url)
+        charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+        charImg.addEventListener('error', () => charImg.hidden = true) // genius level
+        const charCaption = document.createElement('figcaption')
+        charCaption.textContent = element.name
+    
+        charFigure.appendChild(charImg)
+        charFigure.appendChild(charCaption)
+    
+        mainContent.appendChild(charFigure)
+    })
+}
+
+// let theUrl = "https://swapi.co/api/people/2/"
+// let theUrl2 = "https://swapi.co/api/people/12/"
+
+function getLastNumber(url) {
+    let end = url.lastIndexOf('/')
+    let start = end - 2
+    if (url.charAt(start) === '/') {
+        start++
+    }
+    return url.slice(start, end)
+}
+
+function removeChildren(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+}
