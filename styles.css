@@ -1,19 +1,26 @@
 * {
-    margin: 0px;
+    margin: (20px, 0px, 20px, 0px);
     box-sizing: border-box;
+    background-color: black;
+    color: whitesmoke;
 }
 
-main {
+.mainHeader {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+#main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 figure {
     margin: 1rem;
 }
 
-figcaption {
-    background-color: aqua;
-    text-align: center;
+figure img {
+    max-height: 12rem;
 }
