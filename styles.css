@@ -11,6 +11,10 @@
     margin: 1rem;
 }
 
+.main_title {
+    display: flex;
+    justify-content: center;
+  
 #main {
     display: flex;
     flex-wrap: wrap;
