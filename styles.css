@@ -5,6 +5,10 @@
     color: whitesmoke;
 }
 
+.main_title {
+    display: flex;
+    justify-content: center;
+    
 .mainHeader {
     display: flex;
     justify-content: space-around;
