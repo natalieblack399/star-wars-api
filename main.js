@@ -32,6 +32,8 @@ maleButton.addEventListener('click', () => populateDOM(maleCharacters))
 
 femaleButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
+otherButton.addEventListener('click', () => populateDOM(otherCharacters))
+
 function populateDOM(characters) {
     removeChildren(mainContent)
     characters.forEach((element) => {
