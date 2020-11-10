@@ -413,7 +413,7 @@ export const people = [
         "skin_color": "green-tan, brown",
         "eye_color": "orange",
         "birth_year": "600BBY",
-        "gender": "hermaphrodite",
+        "gender": "n/a",
         "homeworld": "https://swapi.co/api/planets/24/",
         "films": [
             "https://swapi.co/api/films/4/",
@@ -1732,7 +1732,7 @@ export const people = [
         "skin_color": "silver, red",
         "eye_color": "red, blue",
         "birth_year": "unknown",
-        "gender": "female",
+        "gender": "n/a",
         "homeworld": "https://swapi.co/api/planets/28/",
         "films": [
             "https://swapi.co/api/films/5/",
@@ -2002,7 +2002,7 @@ export const people = [
         "skin_color": "none",
         "eye_color": "black",
         "birth_year": "unknown",
-        "gender": "none",
+        "gender": "n/a",
         "homeworld": "https://swapi.co/api/planets/28/",
         "films": [
             "https://swapi.co/api/films/7/"
