@@ -21,11 +21,6 @@
     justify-content: center;
 }
 
-.mainHeader {
-    display: flex;
-    justify-content: space-around;
-    margin: 1rem;
-}
 
 #main {
     display: flex;
