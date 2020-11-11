@@ -4,18 +4,31 @@
     background-color: black;
     color: whitesmoke;
 }
-    
-.mainHeader {
+
+#headbox {
+    display: block;
     display: flex;
-    justify-content: space-around;
-    margin: 1rem;
+    justify-content: center;
+    background-color: black;
+    box-shadow: 0 2px 0 rgba(95,158,160,1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .main_title {
     display: flex;
     justify-content: center;
 }
-  
+
+.mainHeader {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
 #main {
     display: flex;
     flex-wrap: wrap;
