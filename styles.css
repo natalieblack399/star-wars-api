@@ -24,6 +24,10 @@
     background-size: contain;
 }
 
+button {
+    border-radius:.8rem;
+}
+
 figure {
     margin: 1rem;
 }
