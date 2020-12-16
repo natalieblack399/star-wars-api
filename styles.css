@@ -26,6 +26,8 @@
 
 button {
     border-radius:.8rem;
+    background-color: #ffcb05;
+    color: #fff;
 }
 
 figure {
